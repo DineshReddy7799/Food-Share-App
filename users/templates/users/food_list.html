@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food List</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        #map { height: 400px; margin-bottom: 20px; }
+        .food-item-list { margin-top: 20px; }
+        .food-item { margin-bottom: 10px; }
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        
+    </style>
+</head>
+<body>
+    <h1><div i"foodlisting">Food Listings<div></h1>
+
+    <div id="map" style="height: 300px; width: 50%;"></div>
+
+
+    <!-- Food Item List Section -->
+    <div class="food-item-list">
+        <h2>Available Food Items</h2>
+        <div id="food-items-container"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([20, 0], 2);
+
+        // Set the tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Pass food items from Django to JavaScript as JSON
+        var foodItems = {{ food_items_json|safe }};
+
+        // Add markers and list items for each food item
+        foodItems.forEach(function(item) {
+            if (item.latitude && item.longitude) {
+                // Add marker to the map
+                L.marker([item.latitude, item.longitude]).addTo(map)
+                    .bindPopup("<strong>" + item.name + "</strong><br>" + item.location);
+
+                // Add item to the list
+                var itemContainer = document.getElementById('food-items-container');
+                var foodItemDiv = document.createElement('div');
+                foodItemDiv.classList.add('food-item');
+                foodItemDiv.innerHTML = "<h3>" + item.name + "</h3><p>Location: " + item.location + "</p>";
+                itemContainer.appendChild(foodItemDiv);
+            }
+        });
+    </script>
+</body>
+</html>

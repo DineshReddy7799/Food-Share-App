@@ -1,0 +1,25 @@
+<!-- users/templates/users/search_results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results for "{{ query }}"</h1>
+    <div class="food-cards">
+        {% for item in food_items %}
+            <div class="food-card">
+                <h3>{{ item.name }}</h3>
+                <p>Location: {{ item.location }}</p>
+                <p>Expires on: {{ item.expiration_date }}</p>
+                <!-- You can add more details and images as needed -->
+            </div>
+        {% empty %}
+            <p>No food items found.</p>
+        {% endfor %}
+    </div>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>

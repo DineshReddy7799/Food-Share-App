@@ -1,0 +1,183 @@
+
+/* General reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Typography and headings */
+h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* Form container */
+form {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* This allows the form to shrink or expand */
+    max-width: 700px; /* Adjust this value to increase the form width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px; /* Space below the heading */
+}
+
+
+/* Input fields styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    background-color: rgb(218, 82, 14);
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color:  rgb(218, 82, 14);
+    transform: scale(1.02);
+}
+
+button[type="submit"]:active {
+    background-color: #1e6fa1;
+    transform: scale(0.98);
+}
+
+/* CSRF Token Placeholder */
+form input[name="csrfmiddlewaretoken"] {
+    display: none;
+}
+
+/* Center form and ensure visibility */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form {
+    flex-shrink: 0; /* Prevent the form from shrinking */
+    margin-bottom: 20px; /* Add spacing at the bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Sidebar styling for food listings */
+.food-item-list {
+    width: 30%; /* Sidebar width */
+    background-color: #f7f7f7; /* Light gray background */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Scroll if content exceeds height */
+    height: 50vh; /* Full viewport height */
+}
+
+.food-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background for each item */
+}
+
+.food-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+}
+
+.food-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Map styling */
+#map {
+    flex-grow: 1; /* Map takes the remaining space */
+    height: 400px; /* Adjust height to your preference (increased height) */
+    width: 70%; /* Increase width of the map */
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .food-item-list {
+        width: 100%;
+        height: auto;
+    }
+    #map {
+        height: 400px; /* Adjust for smaller screens */
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+h1{
+    background-color:  rgb(218, 82, 14);
+    border-radius: 4px;
+    color:white;
+    width: 1500px;
+    text-align: center;
+}

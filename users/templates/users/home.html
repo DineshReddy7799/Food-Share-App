@@ -1,0 +1,15 @@
+{% load static %}
+<head><link rel="stylesheet" href="{% static 'css/stylehome.css' %}"></head>
+<header class="navbar">
+    <nav id="navbar"> 
+            <a class="rr" href="{% url 'register' %}">Register</a> 
+            <a class="rr" href="{% url 'login' %}">Login</a>
+            <a class="rr" href="{% url 'profile' %}">My Profile</a>
+    </nav><br>
+    
+</header>
+<form action="{% url 'search' %}" method="get" class="search-bar">
+    <input id="search-bar" type="text" name="q" placeholder="Search food items...">
+    <br><br>
+    <button id="button1" type="submit">Search</button>
+</form>

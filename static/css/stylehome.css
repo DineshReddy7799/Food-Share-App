@@ -1,0 +1,34 @@
+#navbar{
+    background-color: rgb(218, 82, 14);
+    padding: 10px;
+}
+.rr{
+    padding-right: 10px;
+    text-decoration: none;
+    font-size: large;
+    color: #dbd8e3;
+}
+#search-bar{
+    background-color: rgb(243, 239, 239);
+    color: #dbd8e3;
+    width: 20%;
+    height: fit-content;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    outline: none;
+}
+#button1{
+    background-color: rgb(218, 82, 14);
+    border-radius: 4px;
+    color:white;
+    border: none;
+    padding: 4px;
+    
+}
